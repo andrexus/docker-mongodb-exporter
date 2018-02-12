@@ -7,7 +7,7 @@ DIST_USER=andrexus
 GOTOOLS = \
     github.com/tcnksm/ghr \
 
-all: clean clone build dist
+all: clean clone tools build dist
 
 build:
 	@echo "==> Building ${PROJECT_NAME}..."
