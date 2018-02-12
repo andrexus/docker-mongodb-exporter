@@ -6,16 +6,6 @@ go:
 env:
   global:
     - "PATH=/home/travis/gopath/bin:$PATH"
-    - DIST_USER="andrexus"
-    - TARGET_PAROJECT="github.com/percona/mongodb_exporter"
-    - CLONE_VERSION="v0.4.0"
-
-install:
-  - go get -u github.com/golang/dep/cmd/dep
-  - go get -u github.com/tcnksm/ghr
 
 script:
-  - git clone --branch $CLONE_VERSION https://$TARGET_PAROJECT.git $GOPATH/src/$TARGET_PAROJECT
-  - cd $GOPATH/src/$TARGET_PAROJECT
   - make
-  - ghr -u $DIST_USER --token $GITHUB_TOKEN --replace $CLONE_VERSION mongodb_exporter
